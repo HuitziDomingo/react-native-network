@@ -1,4 +1,4 @@
-import { View, Text,  Alert } from 'react-native'
+import { View, Text, Alert } from 'react-native'
 import { useSelector, useDispatch } from 'react-redux'
 import { setUser } from '../../store/slice/Auth/authReducer'
 import { Button } from 'react-native-paper'
@@ -30,7 +30,7 @@ export default () => {
             {user ? <Text>Cerrar Sesion</Text> : <Text>Entrar</Text>}
 
             {
-                !user && <Button   
+                !user && <Button
                     onPress={() => handleLog()}
                 >
                     Log in
@@ -38,7 +38,7 @@ export default () => {
             }
             {
                 user && <Button
-                    
+
                     onPress={() => handleLogout()}
                 >
                     Log Out
