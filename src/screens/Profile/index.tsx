@@ -1,50 +1,54 @@
-import { View, Text, Alert } from 'react-native'
-import { useSelector, useDispatch } from 'react-redux'
-import { setUser } from '../../store/slice/Auth/authReducer'
-import { Button } from 'react-native-paper'
-
+import { View, Text, Image, ScrollView } from 'react-native'
+import { stylesProfile } from '../Profile/styles/styles'
 
 export default () => {
 
-    const dispatch = useDispatch()
-    const user = useSelector(state => state.auth.user)
 
-    console.log(user, 'esta pasando')
-
-    const handleLog = () => {
-        dispatch(setUser({
-            name: 'Huitzitzili',
-            username: 'Leon',
-            email: 'leon@hotmail.com'
-        }))
-        Alert.alert('Usario loggeado con satisfaccion')
-    }
-
-    const handleLogout = () => {
-        dispatch(setUser(false))
-        Alert.alert('Usario Cerro Session')
-    }
 
     return (
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-            {user ? <Text>Cerrar Sesion</Text> : <Text>Entrar</Text>}
-
-            {
-                !user && <Button
-                    onPress={() => handleLog()}
-                >
-                    Log in
-                </Button>
-            }
-            {
-                user && <Button
-
-                    onPress={() => handleLogout()}
-                >
-                    Log Out
-                </Button>
-            }
-        </View>
+        <>
+            <View style={stylesProfile.coverCont}>
+                <Image
+                    style={stylesProfile.cover}
+                    source={require('./assets/img/bg.jpg')}
+                />
+            </View>
+            <View style={stylesProfile.contTitle} >
+                <Text style={stylesProfile.title}>Lorem ipsum dolor, sit amet.</Text>
+                <ScrollView horizontal>
+                    <View>
+                        <Image
+                            style={stylesProfile.slideItems}
+                            source={require('./assets/img/actividad1.jpg')}
+                        />
+                    </View>
+                    <View>
+                        <Image
+                            style={stylesProfile.slideItems}
+                            source={require('./assets/img/actividad2.jpg')}
+                        />
+                    </View>
+                    <View>
+                        <Image
+                            style={stylesProfile.slideItems}
+                            source={require('./assets/img/actividad3.jpg')}
+                        />
+                    </View>
+                    <View>
+                        <Image
+                            style={stylesProfile.slideItems}
+                            source={require('./assets/img/actividad4.jpg')}
+                        />
+                    </View>
+                    <View>
+                        <Image
+                            style={stylesProfile.slideItems}
+                            source={require('./assets/img/actividad5.jpg')}
+                        />
+                    </View>
+                </ScrollView>
+            </View>
+        </>
     )
 }
 
