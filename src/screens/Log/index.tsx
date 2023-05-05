@@ -7,7 +7,7 @@ import { Button } from 'react-native-paper'
 export default () => {
 
     const dispatch = useDispatch()
-    const user = useSelector(state => state.auth.user)
+    const user = useSelector((state: any) => state.auth.user)
 
     console.log(user, 'esta pasando')
 
