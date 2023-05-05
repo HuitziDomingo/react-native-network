@@ -1,5 +1,4 @@
 import { StyleSheet } from 'react-native'
-import { SlideInLeft } from 'react-native-reanimated';
 
 
 export const stylesProfile = StyleSheet.create({
